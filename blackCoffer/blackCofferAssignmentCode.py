@@ -20,9 +20,9 @@ class BlackCoffer:
         file.close()   
         return self.content
         
-    def tokenText(self,url):
+    def tokenText(self,url,num):
         '''Tokenization of text using NLTK Toolkit'''
-        text=self.getFile1(url)
+        text=self.getFile(url,num)
         self.text=([i for i in nltk.word_tokenize(' '.join( re.findall("[a-zA-Z0-9.]+", text))) if i.lower() not in nltk.corpus.stopwords.words('english')])
         return self.text
 
